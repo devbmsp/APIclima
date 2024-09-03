@@ -12,12 +12,8 @@ function getWeather(city) {
     const apiKey = "64aa98ce766351b55ef8ae364071837d"; 
     const callAPI = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=pt_br`;
 
-
     fetch(callAPI)
         .then(response => {
-            if (!response.ok) {
-                throw new Error("Cidade não encontrada.");
-            }
             return response.json();
         })
         .then(response => {
